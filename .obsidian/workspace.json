@@ -1,0 +1,270 @@
+{
+  "main": {
+    "id": "ba736058a2bd26f1",
+    "type": "split",
+    "children": [
+      {
+        "id": "fac1c92e37363775",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "252a9aea831a2c62",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "b3a37d46f332019c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/5장 표현식과 문.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e86833f97b822b5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/10장 객체 리터럴.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8451a4f841bf3bf8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/11장 원시 값과 객체의 비교.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cbe315418509f094",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/클로저.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1146fa2e08b7cee6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/21장 빌트인 객체.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b7e1ddbe2b8faaba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/22장 this.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "76bb1a2a7a999c1a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaSript/10장 객체 리터럴.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fc4bba6d69835de3",
+    "type": "split",
+    "children": [
+      {
+        "id": "0820d964c4f29f47",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c2e9135fec34f471",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "903651fa0adb8ed3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8bf2a2c704b0dd94",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ea4ea09c1001b499",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d4fc5db52fe4787",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "75086935cbceae24",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "JavaSript/22장 this.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "124473affbf2b4ac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "JavaSript/22장 this.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "052728f50a5bee2a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "528614bd688757a2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "JavaSript/22장 this.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b7e1ddbe2b8faaba",
+  "lastOpenFiles": [
+    "JavaSript/21장 빌트인 객체.md",
+    "JavaSript/22장 this.md",
+    "JavaSript/클로저.md",
+    "JavaSript/전역 객체.md",
+    "JavaSript/12장 함수.md",
+    "JavaSript/일급 객체.md",
+    "JavaSript/11장 원시 값과 객체의 비교.md",
+    "images/Pasted image 20240610162228.png",
+    "images/Pasted image 20240610164310.png",
+    "images/Pasted image 20240610164251.png",
+    "images/Pasted image 20240610164116.png",
+    "images/Pasted image 20240610163959.png",
+    "images/Pasted image 20240610163235.png",
+    "JavaSript/Hoisting.md",
+    "images/Pasted image 20240610161928.png",
+    "images/Pasted image 20240610162114.png",
+    "JavaSript/10장 객체 리터럴.md",
+    "[[5장.md",
+    "JavaSript/7장 연산자.md",
+    "JavaSript/6장 데이터 타입.md",
+    "JavaSript/5장 표현식과 문.md",
+    "images/Pasted image 20240610120132.png",
+    "JavaSript/Map.md",
+    "().md",
+    "JavaSript/8장 제어문.md",
+    "JavaSript/9장 타입 변환과 단축 평가.md",
+    "images/Pasted image 20240610120549.png",
+    "JavaSript/2장 자바스크립트란.md",
+    "JavaSript/4장 변수.md",
+    "Pasted image 20240610101251.png.md",
+    "JavaSript/3장 자바스크립트 개발환경과 실행 방법.md",
+    "4.4.md",
+    "StringData.md",
+    "![[Pasted.md",
+    "JavaSript/EventLoop.md",
+    "images",
+    "JavaSript"
+  ]
+}
