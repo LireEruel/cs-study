@@ -79,7 +79,8 @@ console.log(circle.getDiameter()); // 10
 
 ###  this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.
 
-함수를 호출하는 방식
+**함수를 호출하는 방식**
+
 1. 일반 함수 호출
 2. 메서드 호출
 3. 생성자 함수 호출
@@ -136,7 +137,70 @@ function foo() {
 	bar();
 }
 foo();
+
+const obj = {
+	value : 100,
+	foo(){
+		console.log(this) // {value : 100, foo: f}
+		setTimeout(function() {
+				console.log(this)// window
+		}, 100)
+	}
+}
+
+obj.foo();
 ```
 
 위 예제처럼 전역 함수는 물론이고, 중첩 함수를 **일반함수로 호출하면 함수 내부의 this에는 전역 객체가 바인딩된다.** 다만 객체를 생성하지 않는 일반 함수에는 this는 의미가 없다. 따라서 stict mode에서는 일반 함수 내부의 this에는 undefined가 바인딩된다.
+
+- 메서드 내엔서 정의한 중첩함수도 일반 함수로 호출되면 중첩 함수의  this에는 전역 객체가 바인딩된다.
+
+- 콜백 함수가 일반 함수로 호출된다면 콜백 함수의 내부의 this에도 전역 객체가 바인딩된다. 어떠한 함수라도 일반 함수로 호출되면 this에 전역 객체가 바인딩된다.
+
+- **어떠한 함수라도 일반 함수로 호출되면 this에 전역 객체가 바인딩된다.**
+
+#### **일반 함수로 호출된 모든 함수(중첩 함수, 콜백 함수 포함) 내부의 this에는 전역 객체가 바인딩된다.**
+
+
+메서드 내부의 중첩 함수나 콜백 함수의 this 바인딩을 메서드의 this 바인딩과 일치시키기 위한 방법
+
+1. this 바인딩 변수에 할당학.
+
+```js
+const obj = {
+	value : 100,
+	foo(){
+		const that = this;
+		setTimeout(function() {
+				console.log(that) // {value : 100, foo: f}
+		}, 100)
+	}
+}
+```
+
+- 위 방법 외에도 this를 명시적으로 바인딩할 수 있는 Function.prototype.apply, Function.prototype.call, Function.prototype.bind 메서드가 있다.
+
+2. 명시적으로 this를 바인딩하기
+
+	```js
+const obj = {
+	value : 100,
+	foo(){
+		setTimeout(function() {
+				console.log(this.value) // 100
+		}.bind(this), 100)
+	}
+}
+```
+
+3. 화살표 함수를 사용해서 this 바인딩 일치시키기
+
+```js
+const obj = {
+	value : 100,
+	foo(){
+		setTimeout(()=> console.log(this.value), 100); // 100
+	}
+}
+```
 
