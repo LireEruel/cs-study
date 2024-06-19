@@ -204,3 +204,124 @@ const obj = {
 }
 ```
 
+### 22.2.2 메서드 호출
+
+메서드 내부의 this에는 메서드를 호출한 객체, 즉 메서드를 호출할 때 메서드 이름 앞의 . 연산자 앞에 기술한 객체가 바인딩된다.
+
+주의 : **메서드 내부의 this는 메서드를 소유한 객체가 아닌 메서드를 호출한 객체에 바인딩 됨.**
+
+
+```js
+
+const person = {
+	name: 'Lee'
+	getName() {
+		return this.name;
+	}
+}
+
+const anotherPerson = {
+	name: "Kim"
+}
+const getName = person.getName;
+
+anotherPerson.getName = person.getName;
+
+console.log(person.getName()); // Lee
+console.log(anotherPerson.getName()); // Kim
+console.log(getName()) // ''
+// 일반함수로 호출된 getName 함수 내부의 this.name은 브라우저 환경에서 window.name과 같다.
+```
+
+
+프로토타입 메서드 내부에서 사용된 this도 일반 메서드와 마찬가지로 해당 메서드를 호출한 객체에 바인딩된다.
+
+### 22.2.3 생성자 함수 호출
+
+생성자 함수 내부의 this에는 생성자 함수가 생성할 인스턴스가 바인딩된다.
+
+```js
+
+// 생성자 함수
+
+function Circle(radius) {
+	this.radius = radius;
+	this.getDiameter = function () {
+		return 2 * this.radius;
+	}
+}
+
+const cicle1 = new Circle(5);
+console.log(circle1.getDiameter()); // 10
+
+const cicle2 = Circle(15) // new가 없으면 일반 함수 호출이다. 생성자 아니다.
+```
+
+생성자 함수는 이름 그대로 객체(인스턴스)를 생성하는 함수다. 일반 함수와 동일한 방법으로 생성자 함수를 정의하고 **new 연산자와 함께 호출하면** 해당 함수는 생성자 함수로 동작한다.
+
+
+### 22.2.4 Function.prototype.apply / call / bind 메서드에 의한 간접 호출
+
+apply / call / bind 메서드는 Function.prototype의 메서드다. 즉 , 이들 메서드는 모든 함수가 상속받아 사용할 수 있다.
+
+
+Function.prototype.apply, Function.prototype.call 메서드는 this로 사용할 객체와 인수 리스트를 인수로 전달받아 함수를 호출한다.
+
+```js
+
+function getThisBinding() {
+	return this;
+}
+
+const thisArg = {a : 1}
+console.log(getThisBinding()); // window
+
+console.log(getThisBinding.apply(this.Arg)) // {a:1}
+console.log(getThisBinding.call(this.Arg)) // {a:1}
+```
+
+
+**apply와 call 메서드의 본질적인 기능은 함수를 호출하는 것이다.**  apply와 call 메서드는 함수를 호출하면서 첫 번째 인수로 전달한 특정 객체를 호출한 함수의 this에 바인딩한다.
+
+bind 메서드는 메서드의 this와 메서드 내부의 중첩 함수 또는 콜백 함수의 this가 불일치하는 문제를 해결하기 위해 유용하게 사용된다.
+
+```js
+
+const person = {
+	name: 'Lee',
+	foo(callback) {
+		setTimeout(callback, 100)
+	}
+};
+
+person.foo(function () {
+	console.log(`Hi! my name is ${this.name}.`)// Hi my name is .
+	// 일반 함수로 호출된 콜백 함수 내부의 this.name은 window.name과 같다.
+})
+```
+
+위 문제를 bind로 쉽게 해결 가능하다
+
+```js
+
+const person = {
+	name: 'Lee',
+	foo(callback) {
+		setTimeout(callback.bind(this, 100)
+	}
+};
+
+person.foo(function () {
+	console.log(`Hi! my name is ${this.name}.`)// Hi my name is Lee.
+	// 일반 함수로 호출된 콜백 함수 내부의 this.name은 window.name과 같다.
+})
+```
+
+## this 바인딩 정리
+
+| 함수 호출 방식                                             | this 바인딩                                                |
+| ---------------------------------------------------- | ------------------------------------------------------- |
+| 일반 함수 호출                                             | 전역 객체                                                   |
+| 메서드 호출                                               | 메서드를 호출한 객체                                             |
+| 생성자 함수 호출                                            | 생성ㅅ자 함수가 (미래에) 생성할 인스턴스                                 |
+| Function.prototype.apply/call/bind 메서드에 의한 간접 호출<br> | Function.prototype.apply/call/bind 메서드에 첫 번째 인수로 전달한 객체 |
